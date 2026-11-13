@@ -1,0 +1,11 @@
+# tmux plugins are cloned by TPM (install.sh clones TPM itself)
+.tmux/plugins/
+
+# Local backups / leftovers
+.config/hypr/conf_backup_conf/
+*.bak
+*.bak-*
+*.bak-precursor
+
+# Machine-local shell config is sourced from ~/.zshrc.local (never committed)
+.zshrc.local

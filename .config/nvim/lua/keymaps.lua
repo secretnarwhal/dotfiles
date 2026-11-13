@@ -35,3 +35,8 @@ keymap("n", "<Tab>", ">>", { desc = "Indent Line (Normal mode)" })              
 keymap("n", "<S-Tab>", "<<", { desc = "Unindent Line (Normal mode)" })          -- Shift Tab
 keymap("v", "<Tab>", ">gv", { desc = "Indent Selection (Visual mode)" })        -- Tab
 keymap("v", "<S-Tab>", "<gv", { desc = "Unindent Selection (Visual mode)" })    -- Shift Tab
+
+-- Visual line movement for wrapped text
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Move Down Visually" })
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Move Up Visually" })
+

@@ -1,7 +1,16 @@
 {
     "modules-left": ["custom/power", "hyprland/workspaces"],
     // "modules-center": [],
-    "modules-right": ["tray", "bluetooth", "network", "battery", "pulseaudio", "clock"],
+    "modules-right": ["tray", "bluetooth", "network", "custom/vpn", "battery", "pulseaudio", "clock"],
+
+    "custom/vpn": {
+        "format": "{}",
+        "exec": "$HOME/.local/bin/vpn-status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "$HOME/.local/bin/vpn-toggle.sh",
+        "tooltip": true
+    },
 
     "custom/power": {
         "format" : "⭘ ",
@@ -31,10 +40,12 @@
     },
 
     "network": {
+        // "interface": "wlp3s0",
         "format-wifi": "  {essid}",
         "format-ethernet": "  Ethernet",
-        "format-linked": "  Linked (No IP)",
+        "format-linked": "  {essid}",
         "format-disconnected": "  Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip": false,
     },
 
@@ -68,7 +79,7 @@
     },
 
     "clock": {
-        "format": "{:%a %d/%m/%Y ~ %H:%M}",
+        "format": "{:%a %m/%d/%Y ~ %H:%M}",
         "tooltip-format": "<span size='15000'><tt>{calendar}</tt></span>",
         "calendar": {
             "mode": "month",

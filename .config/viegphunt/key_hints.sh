@@ -13,6 +13,7 @@ yad --center --title="Keybinding Hints" --no-buttons --list \
 "  Space"          "        "  "Open terminal" \
 "  E"              "        "  "Open file manager" \
 "  B"              "        "  "Open browser" \
+"  D"              "        "  "Open Discord" \
 "" "" "" \
 "  Shift Ctrl Esc" "        "  "Exit Hyprland" \
 "  Q"              "        "  "Close active window" \
@@ -33,4 +34,9 @@ yad --center --title="Keybinding Hints" --no-buttons --list \
 "  [1 -> 0]"       "        "  "Switch workspace 1-10" \
 "  Shift [1 -> 0]" "        "  "Move window to workspace 1-10" \
 "" "" "" \
-"More Keybinding"   "        "  "$HOME/.config/hypr/conf/keybinding.conf"
+"More Keybinding"   "        "  "$HOME/.config/hypr/conf/keybinding.conf" \
+"" "" "" \
+"Other Applications"    ""      "Description" \
+"alsamixer"         "        "  "Audio mixer utility" \
+"cbonsai"           "        "  "ADHD Medication" \
+"pipes.sh"          "        "  "ADHD preSCRIPTion" \

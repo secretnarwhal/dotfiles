@@ -24,3 +24,13 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+# Repo-only content (installed by install.sh, not symlinked into $HOME)
+^/install\.sh
+^/snapshot\.sh
+^/wallpapers
+^/packages
+^/system
+^/extras
+^/docs
+^/AUDIO_SWAP_DOCS\.md

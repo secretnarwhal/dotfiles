@@ -1,3 +1,5 @@
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="/usr/sbin:$PATH"
 # ─── Meta ───────────────────────────────────────────────────────
 # Created by Phunt_Vieg_
 # Ensure running interactively
@@ -103,9 +105,25 @@ eval "$(zoxide init zsh)"
 # Allowing comments in interactive zsh commands
 setopt interactivecomments
 
-
 # Pokemon startup
 pokemon-colorscripts --no-title -s -r
 
 # Initialize Oh-My-Posh
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/viet.omp.json)"
+export PATH="$HOME/.local/bin:$PATH"
+
+# ─── Machine-local overrides (not tracked in git) ────────────────
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Pre-fill command on startup if requested (only for the first terminal of the
+# login session — Ghostty reuses its launch-time env for every new tab/window,
+# so unsetting STARTUP_COMMAND alone doesn't stop it from recurring there)
+if [[ -n "$STARTUP_COMMAND" ]]; then
+    _startup_command_marker="${XDG_RUNTIME_DIR:-/tmp}/.ghostty-startup-command-shown"
+    if [[ ! -e "$_startup_command_marker" ]]; then
+        touch "$_startup_command_marker"
+        print -z "$STARTUP_COMMAND"
+    fi
+    unset STARTUP_COMMAND _startup_command_marker
+fi
+

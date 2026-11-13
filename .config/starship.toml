@@ -1,0 +1,123 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║              STARSHIP PROMPT — MINIMAL DARK                 ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+# Use a custom format — clean and minimal
+format = """
+[░▒▓](#a6adc8)\
+$os\
+$username\
+[](bg:#89b4fa fg:#a6adc8)\
+$directory\
+[](fg:#89b4fa bg:#cba6f7)\
+$git_branch\
+$git_status\
+[](fg:#cba6f7 bg:#f5c2e7)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$python\
+$docker_context\
+[](fg:#f5c2e7 bg:#1e1e2e)\
+$character"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# ── OS Module ────────────────────────────────────────────────
+[os]
+disabled = false
+style = "bg:#a6adc8 fg:#1e1e2e"
+
+[os.symbols]
+Arch = "󰣇 "
+Linux = " "
+Macos = " "
+Windows = "󰍲 "
+
+# ── Username ─────────────────────────────────────────────────
+[username]
+show_always = true
+style_user = "bg:#a6adc8 fg:#1e1e2e"
+style_root = "bg:#a6adc8 fg:#1e1e2e"
+format = '[$user ]($style)'
+
+# ── Directory ────────────────────────────────────────────────
+[directory]
+style = "bg:#89b4fa fg:#1e1e2e"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+"~" = " "
+
+# ── Git Branch ───────────────────────────────────────────────
+[git_branch]
+symbol = ""
+style = "bg:#cba6f7 fg:#1e1e2e"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#cba6f7 fg:#1e1e2e"
+format = '[$all_status$ahead_behind ]($style)'
+
+# ── Language Modules ─────────────────────────────────────────
+[nodejs]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = "🦀"
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[c]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($context) ]($style)'
+
+[php]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:#f5c2e7 fg:#1e1e2e"
+format = '[ $symbol ($version) ]($style)'
+
+# ── Prompt Character ─────────────────────────────────────────
+[character]
+success_symbol = "[ ](bold #a6e3a1)"
+error_symbol = "[ ](bold #f38ba8)"
