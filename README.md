@@ -188,9 +188,6 @@ Most configs are symlinks into `~/dotfiles`, so edits show up in `git status` ri
 ## Hardware this was built on
 Lenovo **Yoga 7 2-in-1 16AKP10** (AMD Ryzen AI 7 350, Radeon 860M, 1920×1200 16" `eDP-1`, Realtek RTL8922AE Wi-Fi, fingerprint reader). On other hardware, check `conf/monitors.lua`, `conf/workspaces.lua` (`eDP-1`) and the PipeWire swap sink target.
 
-## Known issues
-- `hypridle.conf` (`hyprctl dispatch dpms off/on`) and wlogout's logout button (`hyprctl dispatch exit 0`) still use hyprlang dispatcher syntax, which Hyprland's Lua config rejects. Screen-off on idle and logout from wlogout don't work until they're changed to the Lua forms (e.g. `hyprctl dispatch 'hl.dsp.dpms({ action = "off" })'`).
-
 ## Not included (on purpose)
 Secrets and private infrastructure: SSH/GPG keys, `pass` store, VPN endpoints and credentials, Tailscale, personal AI-agent services, browser profiles, Vencord/Vesktop plugin settings, and sudoers rules.
 
